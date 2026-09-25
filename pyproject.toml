@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "protoadapter"
+version = "0.1.0"
+description = "Training objectives for an external OpenOneRec model"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.optional-dependencies]
+train = ["torch>=2.5", "transformers>=5.3,<5.4", "accelerate>=1", "safetensors>=0.4"]
+
+[project.scripts]
+protoadapter-train = "protoadapter.train:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
